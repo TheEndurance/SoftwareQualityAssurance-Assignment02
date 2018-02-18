@@ -73,6 +73,8 @@ namespace Assignment2
                 {
                     case 1:
                         int[] triangleLengths = GetTriangleDimensions();
+                        string result = TriangleSolver.Analyze(triangleLengths[0], triangleLengths[1], triangleLengths[2]);
+                        Console.WriteLine(result);
                         break;
                     case 2:
                         Console.WriteLine("Thank you, exiting now...");
