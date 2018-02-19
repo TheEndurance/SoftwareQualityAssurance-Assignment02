@@ -10,26 +10,26 @@ namespace Assignment2
     {
         public static string Analyze(int a, int b, int c)
         {
+            
             string output = "invalid";
-
-            if ((a + b) > c
-                && (a + c) > b
-                && (b + c) > a)
-            {
-                if (a == b && b == c)
+            if (a > 0 && b > 0 && c > 0)
+            {  
+                if ((a + b) > c && (a + c) > b && (b + c) > a)
                 {
-                    output = "equilateral";
-                }
-                else if (a == b || a == c || b == c)
-                {
-                    output = "isosceles";
-                }
-                else
-                {
-                    output = "scalene";
+                    if (a == b && b == c)
+                    {
+                        output = "equilateral";
+                    }
+                    else if (a == b || a == c || b == c)
+                    {
+                        output = "isosceles";
+                    }
+                    else
+                    {
+                        output = "scalene";
+                    }
                 }
             }
-
             return output;
         }
     }

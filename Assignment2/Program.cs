@@ -34,16 +34,16 @@ namespace Assignment2
             for (int i = 0; i < 3; i++)
             {
                 string userInput = string.Empty;
-                int triangleLength = -1;
+                int? triangleLength = null;
 
-                while (triangleLength < 1)
+                while (triangleLength==null)
                 {
                     Console.WriteLine($"Enter the length of side {i+1} of the triangle (enter positive values):");
                     userInput = Console.ReadLine();
                     try
                     {
                         triangleLength = Int32.Parse(userInput);
-                        triangleLengths[i] = triangleLength;
+                        triangleLengths[i] = (int)triangleLength;
                     }
                     catch (Exception ex)
                     {
@@ -58,12 +58,11 @@ namespace Assignment2
 
         public static void Main(string[] args)
         {
-            int menuSelected;
             bool exited = false;
 
             while (!exited)
             {
-                menuSelected = PrintMenu();
+                int menuSelected = PrintMenu();
                 while (menuSelected == -1)
                 {
                     menuSelected = PrintMenu();
