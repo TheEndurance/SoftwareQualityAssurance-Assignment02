@@ -11,7 +11,7 @@ namespace Assignment2.test
     public class TriangleSolverUnitTests
     {
         [Test]
-        public void TriangleSolver_WithDimensions5x2x1_ReturnsInvalid()
+        public void TriangleSolver_WithDimensions50x20x10_ReturnsInvalid()
         {
             //arrange
             string expectedOutput = "invalid";
@@ -22,7 +22,7 @@ namespace Assignment2.test
         }
 
         [Test]
-        public void TriangleSolver_WithDimensions5x5x5_ReturnsEquilateral()
+        public void TriangleSolver_WithDimensions50x50x50_ReturnsEquilateral()
         {
             //arrange
             string expectedOutput = "equilateral";
@@ -33,7 +33,7 @@ namespace Assignment2.test
         }
 
         [Test]
-        public void TriangleSolver_WithDimensions5x5x3_ReturnsIsosceles()
+        public void TriangleSolver_WithDimensions50x50x30_ReturnsIsosceles()
         {
             //arrange
             string expectedOutput = "isosceles";
@@ -44,7 +44,7 @@ namespace Assignment2.test
         }
 
         [Test]
-        public void TriangleSolver_WithDimensions7x10x15_ReturnsScalene()
+        public void TriangleSolver_WithDimensions70x100x150_ReturnsScalene()
         {
             //arrange
             string expectedOutput = "scalene";
@@ -52,6 +52,17 @@ namespace Assignment2.test
             string output = TriangleSolver.Analyze(70,100,150);
             //assert
             Assert.AreEqual(expectedOutput,output);
+        }
+
+        [Test]
+        public void TriangleSolver_WithDimensionsNegative25x15x20_ReturnsInvalid()
+        {
+            //arrange
+            string expectedOutput = "invalid";
+            //act
+            string output = TriangleSolver.Analyze(-25, -15, -20);
+            //assert
+            Assert.AreEqual(expectedOutput, output);
         }
 
         [Test]

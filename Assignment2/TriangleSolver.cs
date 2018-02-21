@@ -10,7 +10,6 @@ namespace Assignment2
     {
         public static string Analyze(int a, int b, int c)
         {
-            
             string output = "invalid";
             if (a > 0 && b > 0 && c > 0)
             {  
